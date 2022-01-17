@@ -64,7 +64,23 @@ architecture struct of datapath is
  s: in STD_LOGIC;
  y: out STD_LOGIC_VECTOR(width-1 downto 0));
  end component;
- 
+
+component shift_ll
+port(
+ a: in std_logic_vector(31 downto 0);
+ n: in std_logic_vector(5 downto 0);
+ y: out std_logic_vector(31 downto 0)
+);
+end component
+	
+component shift_ra
+port(
+ a: in std_logic_vector(31 downto 0);
+ n: in std_logic_vector(5 downto 0);
+ y: out std_logic_vector(31 downto 0)
+);
+end component
+	
  signal writereg: STD_LOGIC_VECTOR(4 downto 0);
  signal pcjump, pcnext,
  pcnextbr, pcplus4,
